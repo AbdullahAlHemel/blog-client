@@ -8,8 +8,7 @@ const SingUp = () => {
   const location = useLocation(); 
   const navigate = useNavigate();
 
-
-    
+ 
     const {createUser} = useContext(AuthContext);
     const handleSignUP = e => {
         e.preventDefault();
