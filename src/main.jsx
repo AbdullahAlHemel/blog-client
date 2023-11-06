@@ -64,8 +64,7 @@ const router = createBrowserRouter([
       {
         path: '/featured',
         element: <Featured></Featured>
-      }
-      
+      }   
     ]
   },
 ]);
