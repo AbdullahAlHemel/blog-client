@@ -4,7 +4,8 @@ import Comment from "../Details/Comment";
 const DetailsBookMarks = () => {
     const news = useLoaderData()
     const {_id, title, image, description, category }= news;
-    return (<>
+    return (
+     <>
         <div>
         <div className='flex gap-5 my-8 mb-6 '>
             <div className='md:w-1/2 my-auto'>
