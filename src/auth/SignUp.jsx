@@ -20,27 +20,25 @@ const SingUp = () => {
         console.log(email,password);
         createUser(email, password)
         .then(result => {
-            console.log(result);
-            
+            console.log(result);           
                  
             const createdAt = result.user?.metadata?.creationTime;
             const user = {name, email, createdAt: createdAt }; 
 
-
-            fetch('https://car-server-abdullahalhemel.vercel.app/users', {
-                method : 'POST',
-                headers:{
-                    'content-type' : 'application/json'
-                },
-                body: JSON.stringify(user)
-            })
+            // fetch('https://car-server-abdullahalhemel.vercel.app/users', {
+            //     method : 'POST',
+            //     headers:{
+            //         'content-type' : 'application/json'
+            //     },
+            //     body: JSON.stringify(user)
+            // })
             
-            .then(res => 
-                res.json()
-               )
-            .then(data => {
-                console.log(data);                                   
-            })
+            // .then(res => 
+            //     res.json()
+            //    )
+            // .then(data => {
+            //     console.log(data);                                   
+            // })
         })
 
         if(password.length < 6){
