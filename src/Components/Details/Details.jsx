@@ -79,8 +79,7 @@ const Details = () => {
             <div className="h-[150px] m-auto">
                <Link to={`/update/${_id}`}  className="hover:bg-green-600 hover:text-white p-3 border rounded-md font-bold bg-base-300 border-emerald-500">Update</Link>
                <button onClick={() => handleDelete(_id)} className="hover:bg-red-600 hover:text-white mt-[60px] p-3 border border-red-500 rounded-md font-bold bg-base-300">Delete</button>
-            </div>
-             
+            </div>             
         </div>
         <p id="description" className="mb-10 text-xl px-8">{description}</p>
         </div>          
