@@ -52,7 +52,6 @@ const googleProvider = new GoogleAuthProvider();
     }
 
     return (
-
         
         <AuthContext.Provider value={userInfo}>
             {children}
