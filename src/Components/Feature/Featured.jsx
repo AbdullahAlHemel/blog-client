@@ -1,4 +1,3 @@
-
 import MUIDataTable from "mui-datatables";
 
 const Featured = () => {   
