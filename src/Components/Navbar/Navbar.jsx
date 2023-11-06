@@ -12,15 +12,14 @@ const Navbar = () => {
         .then()
         .catch()
         }
- 
+        
       const navItems = <>
       <li><Link to='/' className='font-bold'>Home</Link></li>
-      <li><Link to='/addblog'  className='font-bold'>Add blog</Link></li>
-      <li><Link to='/'  className='font-bold'>Featured</Link></li>
+      <li><Link to='/featured'  className='font-bold'>Featured</Link></li>
       {user?.email? <>
+      <li><Link to='/addblog'  className='font-bold'>Add blog</Link></li>
       <li><Link to='/allBlog'  className='font-bold'>All blog</Link></li>
       <li><Link to='/bookmark'  className='font-bold'>Bookmark</Link></li>
-      {/* <li className=' font-bold'><button onClick={handleSignOut}>Logout</button></li> */}
        </>:<>
       <li><Link to='/login'  className='font-bold'>Login</Link></li></>
        }

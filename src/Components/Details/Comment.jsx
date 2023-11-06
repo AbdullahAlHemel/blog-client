@@ -4,8 +4,11 @@ const Comment = () => {
     const handleComment = e => {
         e.preventDefault()
         const form = e.target;
-        const comment = form.comment.value
-        console.log(comment);
+        const comment = form.comment.value 
+        const commentDiv = document.getElementById('commentDiv')
+        const result = document.createElement('span')
+        result.innerText = comment;
+        commentDiv.appendChild(result)
     }
 
     return (<>       
@@ -31,7 +34,7 @@ const Comment = () => {
             <div className="chat-footer opacity-50">
             <time className="text-xs opacity-50">12:45</time>
         </div>
-   </div>
+    </div>
     
     <div className="chat chat-start w-[700px] m-auto my-1">
         <div className="chat-image avatar">
@@ -46,7 +49,24 @@ const Comment = () => {
             <div className="chat-footer opacity-50">
             <time className="text-xs opacity-50">2:05</time>
         </div>
-   </div></>
+    </div>
+   
+    <div className="chat chat-start w-[700px] m-auto my-1">
+        <div className="chat-image avatar">
+            <div className="w-10 rounded-full">
+                <img src="https://avatars.githubusercontent.com/u/35440139?v=4" />
+            </div>
+         </div>
+          <div className="chat-header ml-2 font-semibold text-lg text-blue-700">
+            new User
+          </div>
+            <div  id='commentDiv' className="chat-bubble text-xl">?</div>
+            <div className="chat-footer opacity-50">
+            <time className="text-xs opacity-50">2:05</time>
+        </div>
+    </div>
+   
+   </>
     );
 };
 
