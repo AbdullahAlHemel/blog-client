@@ -18,8 +18,7 @@ const Blogone = ({newst}) => {
              </>
              :
              <h2>{description}</h2>
-             }             
-             
+             }                          
             </div></Link>
         </div>
     );
