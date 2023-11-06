@@ -4,7 +4,7 @@ Details of your News: in Details all information describe very easily and any on
 
 users : Every Users has different identity and if anyone add something to wishlist it will reserve in database and in future it can use 
 
-cover : In cover anyone can easily find and choose course ,that is more effective than search bar, cover img can attract everybody and give summery of a course
+cover : In cover anyone can easily find and choose  ,that is more effective than search bar, cover img can attract everybody and give summery of a news
 
 private Site : No one able to access whole website without Login and keep few webPage open to visit and see some information.
 
