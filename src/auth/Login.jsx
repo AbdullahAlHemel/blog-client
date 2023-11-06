@@ -67,7 +67,7 @@ const Login = () => {
     return (
         <div>
             
-            <div className="hero pt-4 border-t mb-16 pt-8">
+   <div className="hero pt-4 border-t mb-16 pt-8">
     <div data-aos="zoom-in " className="pb-12 md:w-3/4 lg:w-1/2 mx-auto border px-5 rounded py-8">
         <h2 className='text-center text-3xl font-semibold text-gray-600'>Login now</h2>
       <form onSubmit={handleSignIn} className="card-body">
@@ -96,9 +96,8 @@ const Login = () => {
         <FaGoogle className='mr-3 mt-1 '/>
         Google</button>
 
-    </div>
-    
-</div>
+    </div>    
+  </div>
         </div>
     );
 };
