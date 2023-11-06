@@ -1,7 +1,5 @@
-import { HiBookmark } from "react-icons/hi2";
 import { Link, useLoaderData } from 'react-router-dom';
 import Comment from "../Details/Comment";
-
 
 const DetailsBookMarks = () => {
     const news = useLoaderData()
