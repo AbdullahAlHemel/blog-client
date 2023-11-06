@@ -1,8 +1,8 @@
-import React from "react"
+
 import MUIDataTable from "mui-datatables";
 
-const Featured = () => {
-        
+const Featured = () => {   
+
     const columns = [
         {
          name: "title",
