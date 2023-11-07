@@ -12,8 +12,9 @@ const BLogSingle = ({news}) => {
         const title = news.title
         const category = news.category
         const image = news.image
+        const News_Id = news._id;
         const description = news.description
-        const bookmark = {title, category, description, image}
+        const bookmark = {title, category, News_Id, description, image}
         console.log(bookmark);
         fetch(`https://blog-server-tawny-iota.vercel.app/bookmark`, {
           method: 'POST',

@@ -12,9 +12,10 @@ const Details = () => {
  
       const title = document.getElementById("title").innerHTML;
       const category = document.getElementById("category").innerHTML;
-      const image = news.image
+      const image = news.image;
+      const News_Id = news._id;
       const description = document.getElementById("description").innerHTML
-      const bookmark = {title, category, description, image}
+      const bookmark = {title, category,News_Id, description, image}
       console.log(bookmark);
       console.log(news)
       fetch(`https://blog-server-tawny-iota.vercel.app/bookmark`, {

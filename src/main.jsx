@@ -13,7 +13,7 @@ import Update from './Components/Update/Update';
 import AllBlog from './Components/AllBlog/AllBlog';
 import ErrorPage from './Components/Errorpage/ErrorPage';
 import Bookmark from './Components/Bookmark/Bookmark';
-import DetailsBookMarks from './Components/Bookmark/DetailsBookMarks';
+ //import DetailsBookMarks from './Components/Bookmark/DetailsBookMarks';
 import Featured from './Components/Feature/Featured';
 import PrivateRoute from './auth/PrivateRoute';
 
@@ -57,11 +57,11 @@ const router = createBrowserRouter([
         path: '/bookmark',
         element: <PrivateRoute><Bookmark></Bookmark></PrivateRoute>
       },
-      {
-        path: '/bookmark/:id',
-        loader:({params}) => fetch(`https://blog-server-tawny-iota.vercel.app/bookmark/${params.id}`),    
-        element: <DetailsBookMarks></DetailsBookMarks>
-      },
+      // {
+      //   path: '/bookmark/:id',
+      //   loader:({params}) => fetch(`https://blog-server-tawny-iota.vercel.app/bookmark/${params.id}`),    
+      //   element: <DetailsBookMarks></DetailsBookMarks>
+      // },
       {
         path: '/featured',
         element: <PrivateRoute><Featured></Featured></PrivateRoute>
