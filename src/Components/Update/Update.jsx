@@ -37,7 +37,7 @@ const Update = () => {
     }
     return (
         <div>
-          <div className='border p-12 m-10 rounded bg-base-200'>
+          <div className='border md:p-12 md:m-10 p-4 rounded bg-base-200'>
             <h2 className='text-center text-yellow-500 font-bold text-[25px]'>Edit This blog</h2>
 
         <form onSubmit={handleUpdateBlog}>

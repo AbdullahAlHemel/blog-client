@@ -67,7 +67,7 @@ const Details = () => {
     }
     return (<>
       <div>
-        <div className='flex gap-5 my-8 mb-6 '>
+        <div className='flex flex-col md:flex-row gap-5 my-8 mb-6 '>
             <div className='md:w-1/2 my-auto'>
               <h2 id="title" className='text-4xl text-amber-700 text-center font-semibold'>{title}</h2>
               <h3 id="category" className='text-lg font-semibold mb-4 text-blue-400 text-center'># {category}</h3>
@@ -76,9 +76,9 @@ const Details = () => {
             <div className='md:w-1/2'>
               <img  className='rounded' id="image" src={image} alt="" />
             </div>
-            <div className="h-[150px] m-auto">
+            <div className="md:h-[150px] m-auto">
                <Link to={`/update/${_id}`}  className="hover:bg-green-600 hover:text-white p-3 border rounded-md font-bold bg-base-300 border-emerald-500">Update</Link>
-               <button onClick={() => handleDelete(_id)} className="hover:bg-red-600 hover:text-white mt-[60px] p-3 border border-red-500 rounded-md font-bold bg-base-300">Delete</button>
+               <button onClick={() => handleDelete(_id)} className="hover:bg-red-600 hover:text-white md:mt-[60px] p-3 border border-red-500 rounded-md font-bold bg-base-300">Delete</button>
             </div>             
         </div>
         <p id="description" className="mb-10 text-xl px-8">{description}</p>

@@ -15,6 +15,7 @@ import ErrorPage from './Components/Errorpage/ErrorPage';
 import Bookmark from './Components/Bookmark/Bookmark';
 import DetailsBookMarks from './Components/Bookmark/DetailsBookMarks';
 import Featured from './Components/Feature/Featured';
+import PrivateRoute from './auth/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/news/:id',
         loader:({params}) => fetch(`https://blog-server-tawny-iota.vercel.app/news/${params.id}`), 
-        element: <Details></Details>
+        element: <PrivateRoute><Details></Details></PrivateRoute>
       },
       {
         path: '/addblog',
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/bookmark',
-        element: <Bookmark></Bookmark>
+        element: <PrivateRoute><Bookmark></Bookmark></PrivateRoute>
       },
       {
         path: '/bookmark/:id',
@@ -63,15 +64,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/featured',
-        element: <Featured></Featured>
+        element: <PrivateRoute><Featured></Featured></PrivateRoute>
       }   
     ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-   <RouterProvider router={router} />
-   </AuthProvider>
+        <AuthProvider>
+           <RouterProvider router={router} />
+        </AuthProvider>
   </React.StrictMode>,
 )

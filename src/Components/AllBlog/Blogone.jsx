@@ -7,10 +7,10 @@ const Blogone = ({newst}) => {
     return (
         
         <div className='border rounded hover:scale-100 duration-75 mt-2 mb-12'><Link to={`/news/${_id}`}>
-            <img src={image} className='rounded m-auto m-auto' alt="" />
+            <img src={image} className='rounded m-auto' alt="" />
             <div className='p-4'>
-            <h3 className='text-2xl text-amber-700 text-center font-semibold'>{title}</h3>
-            <h3 className='text-xl mb-2 mt-1  text-blue-400 text-center'># {category}</h3>
+            <h3 className='md:text-2xl text-xl text-amber-700 text-center font-semibold'>{title}</h3>
+            <h3 className='md:text-xl mb-2 mt-1  text-blue-400 text-center'># {category}</h3>
             
             {description.length > 20?<>
             <h2>{description.slice(0,120)}</h2>

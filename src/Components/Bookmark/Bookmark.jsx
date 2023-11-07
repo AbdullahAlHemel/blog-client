@@ -1,6 +1,5 @@
 import React, { useEffect ,useState } from 'react';
 import SingleBookmark from './singleBookmark';
-import Comment from '../Details/Comment';
 
 const Bookmark = () => {
 
@@ -13,7 +12,7 @@ const Bookmark = () => {
     },[])
     return (  <>
               <h2 className='text-center mt-2 text-2xl font-semibold text-yellow-600 mb-3 '>Bookmark news</h2>
-            <div className='grid grid-cols-2 gap-5 rounded mb-8'>
+            <div className='grid md:grid-cols-2 gap-5 rounded mb-8'>
             {bookmark.map(bookmark => 
                <SingleBookmark
                key={bookmark._id}

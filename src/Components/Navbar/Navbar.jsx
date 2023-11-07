@@ -42,7 +42,7 @@ const Navbar = () => {
         <div class="navbar bg-base-100">
           
         <div class="navbar-start">
-        <Link to='/'><img className=' md:w-[75px] md:h-[50px] md:mr-0 mr-16 w-[75px] h-[35px]'  src={logo} alt="" />
+        <Link to='/'><img className=' md:w-[75px] md:h-[50px] md:mr-0 mr-16 w-[50px] h-[35px]'  src={logo} alt="" />
         </Link>
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -65,7 +65,7 @@ const Navbar = () => {
               
             <>  
                <button onClick={handleSignOut} className=" flex">
-               <p className="rounded p-1 md:w-[100px]  w-[40px] border border-x-red-400 font-semibold hover:bg-red-100 bold">Logout</p></button>
+               <p className="rounded p-1 md:w-[80px] md:text-base text-[12px] w-[50px] border border-x-red-400 font-semibold hover:bg-red-100 bold">Logout</p></button>
                 <div>
                <div className="avatar ml-8">
                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-0.5">
