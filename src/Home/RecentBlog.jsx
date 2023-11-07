@@ -17,17 +17,16 @@ const RecentBlog = () => {
         <div className='my-7 mb-12'>
            <h2 className='text-center font-bold text-[28px] pt-8 pb-4'>Top NEWS Update</h2>
           
-            {/* <h5>news: {News.length}</h5> */}
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-5 rounded'>
-            {News.map(news => 
-               <BLogSingle
-               key={news._id}
-               news={news}
-               >
-               </BLogSingle>)
-  
-            }
-            </div>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-5 rounded'>
+                {News.map(news => 
+                <BLogSingle
+                key={news._id}
+                news={news}
+                >
+                </BLogSingle>)
+                }
+
+                 </div>         
             
         </div>
     );

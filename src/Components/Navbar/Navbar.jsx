@@ -60,24 +60,27 @@ const Navbar = () => {
         </div>
         <div class="navbar-end">
        
-            {
-               user?.email? 
+          {
+              user? 
+            
+          <>  
+              <button onClick={handleSignOut} className=" flex">
+              <p className="rounded p-1 md:w-[80px] md:text-base text-[12px] w-[50px] border border-x-red-400 font-semibold hover:bg-red-100 bold">Logout</p></button>
+              <div>
+                { user.photoURL?
+                <div className="avatar ml-8">
+                  <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-0.5">
+                    <img src={user.photoURL} alt=""/>
+                  </div>
+                </div> :<></>
+                }
+            <h2 className="text-[10px] ml-3 text-center">{user.displayName}</h2>
+              </div>
               
-            <>  
-               <button onClick={handleSignOut} className=" flex">
-               <p className="rounded p-1 md:w-[80px] md:text-base text-[12px] w-[50px] border border-x-red-400 font-semibold hover:bg-red-100 bold">Logout</p></button>
-                <div>
-               <div className="avatar ml-8">
-               <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-0.5">
-               <img src={user.photoURL} alt=""/>
-               </div></div>
-              <h2 className="text-[10px] ml-3 text-center">{user.displayName}</h2>
-                </div>
-                
-            </> 
-             : 
-             <Link to='/login' className="ml-3" class="p-1.5  rounded bg-blue-300 text-white">Login</Link>
-            } 
+          </> 
+            : 
+            <Link to='/login' className="ml-3" class="p-1.5  rounded bg-blue-300 text-white">Login</Link>
+          } 
         </div>
 
         <label className="swap swap-rotate md: ml-3">          

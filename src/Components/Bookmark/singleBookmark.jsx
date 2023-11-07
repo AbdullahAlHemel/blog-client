@@ -1,39 +1,12 @@
-import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom';
-import Comment from '../Details/Comment';
 
-const SingleBookmark = ({bookmark}) => {
+const SingleBookmark = ({bookmark, handleDelete}) => {
+
     const {_id, title, image, category , News_Id, description} = bookmark;
 
-    const handleDelete = id => {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {   
-          fetch(`https://blog-server-tawny-iota.vercel.app/bookmark/${id}`,{
-            method:'DELETE',
-          })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data);
-            if(data.deletedCount > 0){
-                Swal.fire(
-                    'Deleted!',
-                    'Your Blog has been deleted.',
-                    'success' )
-            }
-          })
-        }
-      })
-    }
+
     return (
-        <div className='border p-4 my-2 rounded flex '>
+        <div className='border p-4 my-1 rounded flex '>
             <img className='w-1/3 rounded' src={image} alt="" />
             <div className=' m-auto'>
                 <h2 className='text-center md:text-[22px]  font-semibold'>{title}</h2>
