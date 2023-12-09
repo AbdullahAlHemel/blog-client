@@ -15,7 +15,7 @@ const Update = () => {
         console.log(updateNews);
 
         //send data to the server
-        fetch(`https://blog-server-tawny-iota.vercel.app/news/${_id}`, {
+        fetch(`http://localhost:5000/news/${_id}`, {
     method: 'PUT',
     headers: {
         'Content-Type': 'application/json' // Corrected the header name

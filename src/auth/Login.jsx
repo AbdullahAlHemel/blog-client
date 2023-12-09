@@ -3,8 +3,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link , useLocation, useNavigate } from 'react-router-dom';
  import swal from 'sweetalert'
 import { AuthContext } from './AuthProvider';
-
-
+import axios from 'axios';
 
 
 const Login = () => {
@@ -23,25 +22,20 @@ const Login = () => {
 
         signInUser(email, password)
         .then(result => {
-            console.log(result.user);
-          navigate(location?.state? location.state : '/' );   })
+            // console.log(result.user);
 
-                // const user = {
-                //     email,
-                //     lastLoggedAt: result.user?.metadata?.lastSignInTime
-                // }
-                // //update last logged at in the database
-                // fetch('https://car-server-abdullahalhemel.vercel.app/users', {
-                //     method:'PATCH',
-                //     headers:{
-                //         'content-type' : 'application/json'
-                //     },
-                //     body: JSON.stringify(user)
-                // })
-                // .then(res => res.json())
-                        
-        // })
+            const user = { email }
+            axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+            .then(res =>{
+              console.log(res.data);
+              if(res.data.success){
+                   navigate(location?.state? location.state : '/' )
+                  }
+         })          
+ })       
+                
         .catch(error =>{
+          console.log(error);
           return swal({
             title: "Error?",
             text: "try again with correct password and email",
@@ -68,7 +62,8 @@ const Login = () => {
         <div>
             
    <div className="hero pt-4 border-t mb-16 pt-8">
-    <div data-aos="zoom-in " className="pb-12 md:w-3/4 lg:w-1/2 mx-auto border px-5 rounded py-8">
+    <div data-aos="zoom-in " className="pb-12 md:w-3/4 lg:w-1/2 mx-au
+     border px-5 rounded py-8">
         <h2 className='text-center text-3xl font-semibold text-gray-600'>Login now</h2>
       <form onSubmit={handleSignIn} className="card-body">
         <div className="form-control">

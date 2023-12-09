@@ -1,10 +1,21 @@
-import React, { useEffect ,useState } from 'react';
+import React, { useContext, useEffect ,useState } from 'react';
 import SingleBookmark from './singleBookmark';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../auth/AuthProvider';
+import axios from 'axios';
+import UseAxiosSecure from './UseAxiosSecure';
 
 const Bookmark = () => {
-
+  const {user} = useContext(AuthContext);
     const [bookmark, setBookmark] = useState([])
+    const axiosSecure = UseAxiosSecure()
+    // console.log(user.email);
+
+    const url = `http://localhost:5000/bookmark?email=${user?.email}`;
+    useEffect(() => {
+      axiosSecure.get(url, {withCredentials:true})
+       .then(res => setBookmark(res.data))
+    },[url, axiosSecure])
 
     const handleDelete = id => {
       Swal.fire({
@@ -17,7 +28,7 @@ const Bookmark = () => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {   
-          fetch(`https://blog-server-tawny-iota.vercel.app/bookmark/${id}`,{
+          fetch(`http://localhost:5000/bookmark/${id}`,{
             method:'DELETE',
           })
           .then(res => res.json())
@@ -35,11 +46,7 @@ const Bookmark = () => {
         }
       })
     }
-    useEffect(() => {
-        fetch('https://blog-server-tawny-iota.vercel.app/bookmark')
-             .then(res => res.json())
-             .then(data => setBookmark(data))
-    },[])
+
     return (  <>
               <h2 className='text-center mt-2 text-2xl font-semibold text-yellow-600 mb-2 '>Bookmark news</h2>
             <div className='grid md:grid-cols-2 gap-5 rounded mb-8'>

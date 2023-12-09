@@ -12,7 +12,7 @@ const AddBlog = () => {
         console.log(news);
 
         //send data to the server
-        fetch('https://blog-server-tawny-iota.vercel.app/addnews', {
+        fetch('http://localhost:5000/addnews', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json' // Corrected the header name

@@ -5,7 +5,7 @@ const AllBlog = () => {
     const [News, setNews] = useState([])
 
     useEffect(() => {
-        fetch('https://blog-server-tawny-iota.vercel.app/news')
+        fetch('http://localhost:5000/news')
              .then(res => res.json())
              .then(data => setNews(data))
     },[])

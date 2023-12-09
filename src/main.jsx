@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/news/:id',
-        loader:({params}) => fetch(`https://blog-server-tawny-iota.vercel.app/news/${params.id}`), 
+        loader:({params}) => fetch(`http://localhost:5000/news/${params.id}`), 
         element: <PrivateRoute><Details></Details></PrivateRoute>
       },
       {
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/update/:id',
-        loader:({params}) => fetch(`https://blog-server-tawny-iota.vercel.app/news/${params.id}`),    
+        loader:({params}) => fetch(`http://localhost:5000/news/${params.id}`),    
         element:<Update></Update>
       },
       {
@@ -55,13 +55,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/bookmark',
-        element: <PrivateRoute><Bookmark></Bookmark></PrivateRoute>
+        element: <Bookmark></Bookmark>
       },
-      // {
-      //   path: '/bookmark/:id',
-      //   loader:({params}) => fetch(`https://blog-server-tawny-iota.vercel.app/bookmark/${params.id}`),    
-      //   element: <DetailsBookMarks></DetailsBookMarks>
-      // },
       {
         path: '/featured',
         element: <PrivateRoute><Featured></Featured></PrivateRoute>

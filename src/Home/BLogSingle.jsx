@@ -15,11 +15,12 @@ const BLogSingle = ({news}) => {
         const title = news.title
         const category = news.category
         const image = news.image
+        const email = user.email
         const News_Id = news._id;
         const description = news.description
-        const bookmark = {title, category, News_Id, description, image}
+        const bookmark = {title, category, News_Id, email ,description, image}
         console.log(bookmark);
-        fetch(`https://blog-server-tawny-iota.vercel.app/bookmark`, {
+        fetch(`http://localhost:5000/bookmark`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json' 

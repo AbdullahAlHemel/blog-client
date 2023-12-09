@@ -60,11 +60,15 @@ const Comment = () => {
           <div className="chat-header ml-2 font-semibold text-lg text-blue-700">
             new User
           </div>
-            <div  id='commentDiv' className="chat-bubble text-xl">?</div>
+
+               <div id='commentDiv'  className="chat-bubble text-xl">?</div>
+
             <div className="chat-footer opacity-50">
             <time className="text-xs opacity-50">2:05</time>
         </div>
     </div>
+   
+    
    
    </>
     );

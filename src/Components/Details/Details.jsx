@@ -18,7 +18,7 @@ const Details = () => {
       const bookmark = {title, category,News_Id, description, image}
       console.log(bookmark);
       console.log(news)
-      fetch(`https://blog-server-tawny-iota.vercel.app/bookmark`, {
+      fetch(`http://localhost:5000/bookmark`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json' 
@@ -50,7 +50,7 @@ const Details = () => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {   
-          fetch(`https://blog-server-tawny-iota.vercel.app/news/${_id}`,{
+          fetch(`http://localhost:5000/news/${_id}`,{
             method:'DELETE',
           })
           .then(res => res.json())
